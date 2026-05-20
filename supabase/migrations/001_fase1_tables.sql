@@ -29,7 +29,7 @@ create table if not exists public.agents (
   description   text,
   system_prompt text not null,
   llm_provider  text not null default 'google',
-  llm_model     text not null default 'gemini-1.5-flash',
+  llm_model     text not null default 'gemini-2.0-flash',
   llm_config    jsonb not null default '{"temperature": 0.7}'::jsonb,
   is_active     boolean not null default true,
   created_at    timestamptz not null default now(),

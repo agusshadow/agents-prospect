@@ -25,9 +25,10 @@ import type { Agent } from "@/schemas/agent";
 type CreateAgentFormData = z.input<typeof CreateAgentSchema>;
 
 const LLM_OPTIONS = [
-  { provider: "google", model: "gemini-1.5-flash", label: "Gemini 1.5 Flash (gratis)" },
-  { provider: "google", model: "gemini-1.5-pro", label: "Gemini 1.5 Pro" },
-  { provider: "google", model: "gemini-2.0-flash-exp", label: "Gemini 2.0 Flash" },
+  { provider: "google", model: "gemini-2.0-flash", label: "Gemini 2.0 Flash (gratis)" },
+  { provider: "google", model: "gemini-2.0-flash-lite", label: "Gemini 2.0 Flash Lite (más rápido)" },
+  { provider: "google", model: "gemini-2.5-flash-preview-05-20", label: "Gemini 2.5 Flash Preview" },
+  { provider: "google", model: "gemini-2.5-pro-preview-05-06", label: "Gemini 2.5 Pro Preview" },
 ] as const;
 
 interface AgentFormProps {
@@ -57,7 +58,7 @@ export function AgentForm({ agent }: AgentFormProps) {
         }
       : {
           llm_provider: "google",
-          llm_model: "gemini-1.5-flash",
+          llm_model: "gemini-2.0-flash",
           is_active: true,
         },
   });
