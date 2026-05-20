@@ -68,7 +68,7 @@ export default async function AgentDetailPage({ params, searchParams }: AgentDet
               Editar
             </Link>
           </Button>
-          <RunAgentButton agentId={id} />
+          <RunAgentButton agentId={id} agentName={agent.name} />
         </div>
       </div>
 
