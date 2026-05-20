@@ -64,6 +64,7 @@ export async function runAgent(input: RunnerInput): Promise<RunnerResult> {
       prompt: userMessage,
       temperature: temperature ?? 0.7,
       maxTokens,
+      maxRetries: 0,
     });
 
     await writeLog(runId, "info", "Respuesta recibida del LLM", {
